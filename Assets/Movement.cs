@@ -5,12 +5,13 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] float deltaTouch;
+    public GameObject parent;
     [Range(1,20)][SerializeField] float speed;
     [SerializeField] Vector2 oldTouchPos = Vector2.zero;
     [SerializeField] float ZPos;
     private void Update()
     {
-        SetPosition(-5 , 5);
+        SetPosition(-4 , 4);
     }
     private void Start()
     {
@@ -18,6 +19,7 @@ public class Movement : MonoBehaviour
     }
     void SetPosition(float min , float max)
     {
+        parent.transform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
         ZPos += Swipe() * Time.deltaTime * speed;
         ZPos = Mathf.Clamp(ZPos, min, max);
         transform.position = new Vector3(transform.position.x, transform.position.y, ZPos);
@@ -38,6 +40,8 @@ public class Movement : MonoBehaviour
             else
                 oldTouchPos = Input.touches[0].position;
         }
+        else
+            deltaTouch = 0;
         return deltaTouch;
     }
 }
