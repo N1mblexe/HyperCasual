@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] float deltaTouchPos = 0;
+    [SerializeField] float deltaTouch;
+    [SerializeField] Vector2 oldTouchPos = Vector2.zero;
     private void Update()
+    {
+        Debug.Log(swipe());
+    }
+
+    int swipe()
     {
         if (Input.touches.Length == 1)
         {
-            Debug.DrawLine(Vector3.zero, Input.touches[0].position);
+            if (oldTouchPos != Vector2.zero)
+            {
+                deltaTouch = Input.touches[0].position.x - oldTouchPos.x;
+                oldTouchPos = Input.touches[0].position;
+
+            }
+            else
+                oldTouchPos = Input.touches[0].position;
         }
+        return 0;
     }
 }
