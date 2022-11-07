@@ -1,25 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour
 {
     [SerializeField] float deltaTouch;
-    public GameObject parent;
     [Range(1,20)][SerializeField] float speed;
     [SerializeField] Vector2 oldTouchPos = Vector2.zero;
     [SerializeField] float ZPos;
+    [Range(1, 2000)][SerializeField] float forwardSpeed;
+    Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        ZPos = transform.position.z;
+        rb.velocity = new Vector3(-1 * forwardSpeed * Time.deltaTime , 0 , 0);
+    }
+
     private void Update()
     {
         SetPosition(-4 , 4);
     }
-    private void Start()
-    {
-        ZPos = transform.position.z;
-    }
+    
     void SetPosition(float min , float max)
     {
-        parent.transform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
+        
         ZPos += Swipe() * Time.deltaTime * speed;
         ZPos = Mathf.Clamp(ZPos, min, max);
         transform.position = new Vector3(transform.position.x, transform.position.y, ZPos);
@@ -38,10 +45,15 @@ public class Movement : MonoBehaviour
 
             }
             else
+            {
                 oldTouchPos = Input.touches[0].position;
+            }
         }
-        else
+        else {
             deltaTouch = 0;
+            oldTouchPos = Vector2.zero;
+        }
+            
         return deltaTouch;
     }
 }
