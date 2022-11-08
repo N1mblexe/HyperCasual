@@ -5,26 +5,26 @@ using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] float deltaTouch;
-    [Range(1,20)][SerializeField] float speed;
-    [SerializeField] Vector2 oldTouchPos = Vector2.zero;
-    [SerializeField] float ZPos;
-    [Range(1, 2000)][SerializeField] float forwardSpeed;
-    Rigidbody rb;
+    [SerializeField] float deltaTouch; //distance between old touch position and new one
+    [Range(1,20)][SerializeField] float speed; //speed to righ and left
+    [SerializeField] Vector2 oldTouchPos = Vector2.zero; //before frame touch pos
+    [SerializeField] float ZPos;//my z axis (to clamp z axis)(to not fall from map)
+    [Range(1, 2000)][SerializeField] float forwardSpeed;//forward speed u stupid
+    Rigidbody rb;//physics
 
-    private void Start()
+    private void Start()//uniy calls this function once in starting script
     {
-        rb = GetComponent<Rigidbody>();
-        ZPos = transform.position.z;
-        rb.velocity = new Vector3(-1 * forwardSpeed * Time.deltaTime , 0 , 0);
+        rb = GetComponent<Rigidbody>();//setting rb
+        ZPos = transform.position.z;//setting zPos to z position
+        rb.velocity = new Vector3(-1 * forwardSpeed * Time.deltaTime , 0 , 0);//setting forward speed
     }
 
-    private void Update()
+    private void Update() //unity calls this function once per frame
     {
-        SetPosition(-4 , 4);
+        SetPosition(-4 , 4);//setting player pos in every frame
     }
     
-    void SetPosition(float min , float max)
+    void SetPosition(float min , float max)//min and max for clamping
     {
         
         ZPos += Swipe() * Time.deltaTime * speed;
@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, ZPos);
     }
 
-    float Swipe()
+    float Swipe()//I'm not gonna explain wtf is this(read it yourself)
     {
         if (Input.touches.Length == 1)
         {
@@ -49,7 +49,8 @@ public class Movement : MonoBehaviour
                 oldTouchPos = Input.touches[0].position;
             }
         }
-        else {
+        else 
+        {
             deltaTouch = 0;
             oldTouchPos = Vector2.zero;
         }
