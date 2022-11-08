@@ -19,6 +19,8 @@ public class UISystem : MonoBehaviour
 
     public GameObject StartMenu;
 
+    public GameObject DailyMission;
+
    void Update()
    {
        if (Input.GetKeyDown(KeyCode.Escape))
@@ -34,6 +36,13 @@ public class UISystem : MonoBehaviour
        }
    }
   
+    public void CloseDailyMission()
+    {
+        StartMenu.SetActive(true);
+        DailyMission.SetActive(false);
+        Panel.SetActive(true);
+        
+    }
    public void Resume()
    {
         StartMenu.SetActive(true);
