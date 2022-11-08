@@ -6,10 +6,10 @@ using UnityEngine.UIElements;
 public class Movement : MonoBehaviour
 {
     [SerializeField] float deltaTouch; //distance between old touch position and new one
-    [Range(1,20)][SerializeField] float speed; //speed to righ and left
+    [Range(1,20)] public float speed = 0; //speed to righ and left
     [SerializeField] Vector2 oldTouchPos = Vector2.zero; //before frame touch pos
     [SerializeField] float ZPos;//my z axis (to clamp z axis)(to not fall from map)
-    [Range(1, 2000)][SerializeField] float forwardSpeed;//forward speed u stupid
+    [Range(1, 2000)]public float forwardSpeed = 0;//forward speed u stupid
     Rigidbody rb;//physics
 
     private void Start()//uniy calls this function once in starting script
