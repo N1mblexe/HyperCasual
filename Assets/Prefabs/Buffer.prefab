@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8624977933277693464}
   m_Layer: 0
   m_Name: Buffer
-  m_TagString: Buffer
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,5 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed1aca12700f6d4ea1a84c8c73c0cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buffYear: -25
-  buffCarNumbers: 0
+  buffYear: 0
+  buffCarNumbers: 10

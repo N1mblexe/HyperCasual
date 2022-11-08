@@ -1143,7 +1143,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 1439359860}
-  distance: {x: -7, y: -3, z: 0}
+  objectToLook: {fileID: 1439359860}
+  gameStarted: 0
+  distance: {x: -4, y: -1.2, z: 0}
 --- !u!1 &1154323005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1263,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3957606334084384843, guid: 4fa554d4eb43d364bb92cd35c0ecdde1, type: 3}
   m_PrefabInstance: {fileID: 3957606334792559423}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1439359868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439359860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62804ad7a50af142a71829936e70d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1789989168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,11 +1904,11 @@ PrefabInstance:
       objectReference: {fileID: 2071732753}
     - target: {fileID: 3957606334084384838, guid: 4fa554d4eb43d364bb92cd35c0ecdde1, type: 3}
       propertyPath: speed
-      value: 2.8
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 3957606334084384838, guid: 4fa554d4eb43d364bb92cd35c0ecdde1, type: 3}
       propertyPath: forwardSpeed
-      value: 267
+      value: 678
       objectReference: {fileID: 0}
     - target: {fileID: 3957606334084384839, guid: 4fa554d4eb43d364bb92cd35c0ecdde1, type: 3}
       propertyPath: m_RootOrder

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,7 +15,6 @@ public class GameStarter : MonoBehaviour
     {
         cam =Camera.main.GetComponent<CameraMovement>();
         movement = GetComponent<Movement>();
-        movement.enabled = false;
     }
     private void Update()
     {
@@ -27,6 +25,7 @@ public class GameStarter : MonoBehaviour
                 coroutine = true;
                 StartCoroutine(LerpCamera());
                 movement.enabled = true;
+                Debug.Log(movement.enabled);
             }
         }
     }

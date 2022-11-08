@@ -7,7 +7,6 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] GameObject objectToFollow; //camera gonna follow this shit object
     [SerializeField] GameObject objectToLook;
     public bool gameStarted = false;
-    double myTimer = 0;
 
     public Vector3 distance = new Vector3(-4, -1.2f, 0); //my own cinemachine go brrrr
 
