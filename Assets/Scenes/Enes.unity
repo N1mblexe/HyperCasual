@@ -2848,7 +2848,7 @@ MonoBehaviour:
   Theme: {fileID: 1189038915}
   PauseSettingsMenu: {fileID: 781187044}
   StartMenu: {fileID: 1035444592}
-  DailyMission: {fileID: 0}
+  DailyMission: {fileID: 1218578817}
 --- !u!114 &1189038912
 MonoBehaviour:
   m_ObjectHideFlags: 0
