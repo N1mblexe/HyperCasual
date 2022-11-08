@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UISystem : MonoBehaviour
 {
-    public static bool gameIsPaused;
+    public static bool gameIsPaused,gameIsStarted;
 
     public GameObject PauseMenu;
 
@@ -19,37 +19,39 @@ public class UISystem : MonoBehaviour
 
     public GameObject StartMenu;
 
-  //  void Update()
-  //  {
-  //      if (Input.GetKeyDown(KeyCode.Escape))
-  //      {
-  //          if (gameIsPaused)
-  //          {
-  //              Resume();
-  //          }
-  //          else
-  //          {
-  //              Pause();
-  //          }
-  //      }
-  //  }
-  //
-  //  public void Resume()
-  //  {
-  //      PauseMenu.SetActive(false);
-  //      Panel.SetActive(false);
-  //      Time.timeScale = 1f;
-  //      gameIsPaused = false;
-  //  }
-  ////
-  //  public void Pause()
-  //  {
-  //      PauseMenu.SetActive(true);
-  //      Panel.SetActive(true);
-  //      Time.timeScale = 0f;
-  //      gameIsPaused = true;
-  //  }
-  //
+   void Update()
+   {
+       if (Input.GetKeyDown(KeyCode.Escape))
+       {
+           if (gameIsPaused)
+           {
+               Resume();
+           }
+           else
+           {
+               Pause();
+           }
+       }
+   }
+  
+   public void Resume()
+   {
+        StartMenu.SetActive(true);
+        PauseMenu.SetActive(false);
+       Panel.SetActive(true);
+       Time.timeScale = 1f;
+       gameIsPaused = false;
+   }
+  
+   public void Pause()
+   {
+        StartMenu.SetActive(false);
+        PauseMenu.SetActive(true);
+       Panel.SetActive(true);
+       Time.timeScale = 0f;
+       gameIsPaused = true;
+   }
+  
     public void LoadGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -87,14 +89,22 @@ public class UISystem : MonoBehaviour
     {
         Theme.mute = !isMusic;
     }
-  //  public void PauseSettings()
-  //  {
-  //      PauseMenu.SetActive(false);
-  //      PauseSettingsMenu.SetActive(true);
-  //      Time.timeScale = 0f;
-  //      gameIsPaused = true;
-  //  }
-  //
+    public void PauseSettings()
+    {
+        StartMenu.SetActive(false);
+        PauseMenu.SetActive(false);
+        PauseSettingsMenu.SetActive(true);
+        Time.timeScale = 0f;
+        gameIsPaused = true;
+    }
+    public void PauseSettingsClose()
+    {
+        PauseMenu.SetActive(true);
+        PauseSettingsMenu.SetActive(false);
+        StartMenu.SetActive(false);
+
+    }
+  
     public void EndGame()
     {
         Application.Quit();
