@@ -35,7 +35,7 @@ public class GameStarter : MonoBehaviour
         cam.distance = Vector3.Lerp(cam.distance, new Vector3(-2, -6.3f, 0), lerpValue);
         yield return new WaitForSeconds(Time.deltaTime);
         Camera.main.transform.LookAt(new Vector3(transform.position.x , transform.position.y ,0));
-        lerpValue += Time.deltaTime * 0.7f;
+        lerpValue += Time.deltaTime * 0.05f;
         if (lerpValue < 1) StartCoroutine(LerpCamera());
         else yield break;
     }

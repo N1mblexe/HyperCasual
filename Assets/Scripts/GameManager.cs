@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] int carNumbers = 1;
-    [SerializeField] int carYear = 0;
+    public int carNumbers = 1;
+    public int carYear = 0;
     [SerializeField] ParticleSystem splashParticle;
     private void OnTriggerEnter(Collider obj)
     {
