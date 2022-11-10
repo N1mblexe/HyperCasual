@@ -1245,8 +1245,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cb: {fileID: 8701785307807089436, guid: e771b38637f80654db20998b2c6e1446, type: 3}
-  lerp: 0
+  cars: []
   add: 0
+  delete: 0
 --- !u!1 &1789989168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,7 +1898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3957606334084384838, guid: 4fa554d4eb43d364bb92cd35c0ecdde1, type: 3}
       propertyPath: forwardSpeed
-      value: 505
+      value: 1102
       objectReference: {fileID: 0}
     - target: {fileID: 3957606334084384839, guid: 4fa554d4eb43d364bb92cd35c0ecdde1, type: 3}
       propertyPath: m_RootOrder

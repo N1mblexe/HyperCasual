@@ -9,6 +9,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] ParticleSystem splashParticle;
     private void OnTriggerEnter(Collider obj)
     {
+        AddBuff(obj);
+    }
+
+    public void AddBuff(Collider obj)
+    {
         if (obj.gameObject.tag == "Buffer")
         {
             carYear += obj.GetComponent<BufferManager>().buffYear;
