@@ -5,23 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class UISystem : MonoBehaviour
 {
-    public static bool gameIsPaused,gameIsStarted;
+    #region Deðiþkenler
 
+    [Header ("Menüler")]
     public GameObject PauseMenu;
-
     public GameObject SettingsMenu;
-
-    public GameObject Panel;
-
-    public AudioSource Theme;
-
     public GameObject PauseSettingsMenu;
-
     public GameObject StartMenu;
-
     public GameObject DailyMission;
+    [Header("Müzikler")]
+    public AudioSource Theme;
+    [Header("Arkaplan")]
+    public GameObject Panel;
+    
 
-   void Update()
+    
+    public static bool gameIsPaused,gameIsStarted;
+   
+    #endregion
+    void Update()
    {
        if (Input.GetKeyDown(KeyCode.Escape))
        {
@@ -35,7 +37,7 @@ public class UISystem : MonoBehaviour
            }
        }
    }
-  
+    #region UI Buton Fonksiyonlarý
     public void CloseDailyMission()
     {
         StartMenu.SetActive(true);
@@ -118,4 +120,5 @@ public class UISystem : MonoBehaviour
     {
         Application.Quit();
     }
+    #endregion
 }
