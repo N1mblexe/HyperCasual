@@ -15,7 +15,10 @@ public class GameManager : MonoBehaviour
     private void OnTriggerEnter(Collider obj)
     {
         if(obj.tag == "Car" || obj.tag == "Buffer") AddBuff(obj);
-        if (obj.tag == "EndLevel") SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        if (obj.tag == "EndLevel")
+        {
+
+        }
     }
     private void Awake()
     {
