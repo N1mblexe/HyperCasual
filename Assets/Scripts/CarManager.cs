@@ -17,9 +17,9 @@ public class CarManager : MonoBehaviour
 
     private void Update()
     {
-        if (cars.Count-1 > gameManager.carNumbers)
+        if (cars.Count-1 > gameManager.carNumbers && gameManager.gameRunning)
             DeleteCar();
-        if (cars.Count-1 < gameManager.carNumbers)
+        if (cars.Count-1 < gameManager.carNumbers && gameManager.gameRunning)
             AddCar();
     }
 

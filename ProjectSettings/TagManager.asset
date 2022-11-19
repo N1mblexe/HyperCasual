@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Buffer
   - Car
+  - EndLevel
   layers:
   - Default
   - TransparentFX
