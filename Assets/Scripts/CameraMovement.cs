@@ -22,5 +22,3 @@ public class CameraMovement : MonoBehaviour
     }
     
 }
-//-4  -1.2
-//-5 , -5

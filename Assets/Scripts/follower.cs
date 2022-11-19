@@ -8,6 +8,7 @@ public class follower : MonoBehaviour
     double yumos = 0.01;
     private void LateUpdate()
     {
+        transform.LookAt(linkedObj.transform);
         yumos += yumos > 1 ? -yumos : 0.00008;
         transform.position = new Vector3(
             linkedObj.transform.position.x + transform.localScale.y * 1.1f,

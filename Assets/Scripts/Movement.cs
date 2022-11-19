@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     [SerializeField] Vector2 oldTouchPos = Vector2.zero; //before frame touch pos
     [SerializeField] float ZPos;//my z axis (to clamp z axis)(to not fall from map)
     [Range(1, 2000)]public float forwardSpeed = 0;//forward speed u stupid
-    Rigidbody rb;//physics
+    public Rigidbody rb;//physics
 
     private void Start()//uniy calls this function once in starting script
     {

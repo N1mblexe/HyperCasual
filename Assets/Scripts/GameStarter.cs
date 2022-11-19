@@ -10,6 +10,7 @@ public class GameStarter : MonoBehaviour
     bool gameStarted = false;
     bool coroutine = false;
     float lerpValue = 0;
+    bool gameWaiter = true;
 
     private void Start()
     {
@@ -18,16 +19,22 @@ public class GameStarter : MonoBehaviour
     }
     private void Update()
     {
-        if(!gameStarted && !coroutine)
+        if(gameWaiter) StartCoroutine(GameWaiter());
+        if(!gameStarted && !coroutine && !gameWaiter)
         {
-            if (Input.touchCount > 0)
+            if (Input.GetMouseButtonDown(0))
             {
                 coroutine = true;
                 StartCoroutine(LerpCamera());
                 movement.enabled = true;
-                Debug.Log(movement.enabled);
             }
         }
+    }
+
+    IEnumerator GameWaiter()
+    {
+        yield return new WaitForSeconds(1.5f);
+        gameWaiter = false;
     }
 
     IEnumerator LerpCamera()
