@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7281a48f89145e429d275dced582419, type: 3}
   m_Name: camPos
   m_EditorClassIdentifier: 
-  pos1: {x: 0, y: 0, z: 0}
+  pos1: {x: -94.9, y: 19, z: -15.8}
   pos2: {x: 0, y: 0, z: 0}

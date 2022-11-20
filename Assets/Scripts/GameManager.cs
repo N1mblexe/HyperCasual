@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public int carNumbers = 1;
     public int carYear = 1;
     [SerializeField] ParticleSystem splashParticle;
+    [SerializeField] GameObject sharky;
     public int level = 0;
 
     public bool gameRunning = true;
@@ -18,7 +19,8 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
-        level = SceneManager.GetActiveScene().buildIndex;       
+        level = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("level", level);
     }
     public void AddBuff(Collider obj)
     {
@@ -39,15 +41,19 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update()
-    {
+    { 
         if(carNumbers < 1 || carYear < 1)
         {
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             GetComponent<Movement>().enabled = false;
-            Debug.Log(gameRunning);
             gameRunning = false;
             if (Input.GetMouseButtonDown(0))
-                SceneManager.LoadScene(level);
+            {
+                if (sharky.GetComponent<DamageSharky>().health <= 0)
+                    SceneManager.LoadScene(level + 1);
+                else
+                    SceneManager.LoadScene(level);
+            }
         }
     }
 }

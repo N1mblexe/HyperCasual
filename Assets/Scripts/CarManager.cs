@@ -6,6 +6,7 @@ using UnityEngine;
 public class CarManager : MonoBehaviour
 {
     public GameObject cb;
+    int counter = 0;
     GameObject temp;
     GameManager gameManager;
     [SerializeField] List<GameObject> cars = new List<GameObject>();
@@ -28,11 +29,18 @@ public class CarManager : MonoBehaviour
         cars.Add(Instantiate(cb));
         Link();
     }
-    void DeleteCar()
+    public void DeleteCar()
     {
-            temp = cars[cars.Count - 1];
-            cars.Remove(cars[cars.Count - 1]);
-            Destroy(temp);
+        temp = cars[cars.Count - 1];
+        cars.Remove(cars[cars.Count - 1]);
+        Destroy(temp);
+    }
+
+    public void DeleteFrontCar()
+    {
+        temp = cars[0];
+        cars.RemoveAt(0);
+        Destroy(temp);
     }
 
 
