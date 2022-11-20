@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 public class SpinWheel : MonoBehaviour
 {
+    #region Deðiþkenler
     public List<int> prize;
     public List<AnimationCurve> animationCurves;
+    public MissionSystem MS;
 
     private bool spinning;
     private float anglePerItem;
     private int randomTime;
     private int itemNumber;
-
+    #endregion
     void Start()
     {
         spinning = false;
@@ -18,14 +20,17 @@ public class SpinWheel : MonoBehaviour
     }
     public void Basla()
     {
-        randomTime = Random.Range(1, 4);
+        if (!spinning)
+        {
+            randomTime = Random.Range(1, 4);
         itemNumber = Random.Range(0, prize.Count);
         float maxAngle = 360 * randomTime + (itemNumber * anglePerItem);
 
         StartCoroutine(SpinTheWheel(5 * randomTime, maxAngle));
-    }
 
-  
+        }
+       
+    }
 
     IEnumerator SpinTheWheel(float time, float maxAngle)
     {
@@ -50,6 +55,8 @@ public class SpinWheel : MonoBehaviour
         transform.eulerAngles = new Vector3(0.0f, 0.0f, maxAngle + startAngle);
         spinning = false;
 
-        Debug.Log("Prize: " + prize[itemNumber]);//use prize[itemNumnber] as per requirement
+        Debug.Log(" Old Cash " + MissionSystem.cash);
+        MissionSystem.cash = MissionSystem.cash + prize[itemNumber];
+        Debug.Log("Current Cash = " + MissionSystem.cash);
     }
 }
