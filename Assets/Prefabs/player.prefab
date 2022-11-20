@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dede3cb82e6909d48acf51450d81e898, type: 2}
+  - {fileID: -876546973899608171, guid: 01ad48edac038e846960a9cb9ef65949, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -117,6 +117,7 @@ MonoBehaviour:
   oldTouchPos: {x: 0, y: 0}
   ZPos: 0
   forwardSpeed: 123
+  rb: {fileID: 0}
 --- !u!114 &3957606334084384837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +133,8 @@ MonoBehaviour:
   carNumbers: 1
   carYear: 0
   splashParticle: {fileID: 0}
+  level: 0
+  gameRunning: 1
 --- !u!54 &3957606334084384836
 Rigidbody:
   m_ObjectHideFlags: 0

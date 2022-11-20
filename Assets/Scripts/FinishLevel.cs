@@ -18,13 +18,13 @@ public class FinishLevel : MonoBehaviour
             {
                 Camera.main.gameObject.GetComponent<CameraMovement>().enabled = false;
                 coroutine = true;
-                StartCoroutine(lerpCamera());
+                StartCoroutine(LerpCamera());
             }
             rb = other.GetComponent<Rigidbody>();
             other.GetComponent<follower>().enabled = true;
             other.GetComponent<follower>().end = true;
             other.GetComponent<BoxCollider>().isTrigger = false;
-            other.gameObject.transform.eulerAngles = new Vector3(-60, 90, -90);
+            
             rb.velocity = Vector3.zero;
             rb.useGravity = true;
         }
@@ -39,7 +39,7 @@ public class FinishLevel : MonoBehaviour
         }
     }
 
-    IEnumerator lerpCamera()
+    IEnumerator LerpCamera()
     {
         yield return new WaitForSeconds(Time.deltaTime);
         yumos += yumos > 1 ? 0 : 0.00008;
@@ -49,6 +49,7 @@ public class FinishLevel : MonoBehaviour
             yumos = 0;
             yield break; 
         }
-        StartCoroutine(lerpCamera());
+        StartCoroutine(LerpCamera());
     }
+
 }

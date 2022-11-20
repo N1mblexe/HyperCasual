@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
             else carYear += (int)obj.GetComponent<BufferManager>().buffYear;
             splashParticle.transform.position = obj.transform.position;
             splashParticle.Play();
-            Destroy(obj.gameObject);
         }
         if (obj.gameObject.tag == "Car")
         {
@@ -40,7 +39,6 @@ public class GameManager : MonoBehaviour
             else carNumbers += (int)obj.GetComponent<BufferManager>().buffCarNumbers;
             splashParticle.transform.position = obj.transform.position;
             splashParticle.Play();
-            Destroy(obj.gameObject);
         }
     }
 
