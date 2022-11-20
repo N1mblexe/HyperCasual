@@ -15,10 +15,6 @@ public class GameManager : MonoBehaviour
     private void OnTriggerEnter(Collider obj)
     {
         if(obj.tag == "Car" || obj.tag == "Buffer") AddBuff(obj);
-        if (obj.tag == "EndLevel")
-        {
-
-        }
     }
     private void Awake()
     {
@@ -28,14 +24,14 @@ public class GameManager : MonoBehaviour
     {
         if (obj.gameObject.tag == "Buffer")
         {
-            if(obj.GetComponent<BufferManager>().yearMultipler) carYear *= (int)obj.GetComponent<BufferManager>().buffYear;
+            if(obj.GetComponent<BufferManager>().yearMultipler) carYear =(int)(carYear * obj.GetComponent<BufferManager>().buffYear);
             else carYear += (int)obj.GetComponent<BufferManager>().buffYear;
             splashParticle.transform.position = obj.transform.position;
             splashParticle.Play();
         }
         if (obj.gameObject.tag == "Car")
         {
-            if(obj.GetComponent<BufferManager>().carNumbersMultipler) carNumbers *= (int)obj.GetComponent<BufferManager>().buffCarNumbers;
+            if (obj.GetComponent<BufferManager>().carNumbersMultipler) carNumbers = (int)(carNumbers * obj.GetComponent<BufferManager>().buffCarNumbers);
             else carNumbers += (int)obj.GetComponent<BufferManager>().buffCarNumbers;
             splashParticle.transform.position = obj.transform.position;
             splashParticle.Play();

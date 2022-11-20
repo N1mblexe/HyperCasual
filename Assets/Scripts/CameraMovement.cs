@@ -11,7 +11,9 @@ public class CameraMovement : MonoBehaviour
     [Header("Variables")]
     public bool gameStarted = false;
     public bool realTimeLook = false;
-    public Vector3 distance = new(-1.5f, -1.8f, 0); //my own cinemachine go brrrr
+    [Range(0.5f, 5)][SerializeField]static float x1, y1, z1 , x2 , y2 , z2;
+    public Vector3 distance = new(x1, y1, z1); //my own cinemachine go brrrr
+    public Vector3 distance2 = new(x2, y2, z2);
     #endregion
     private void Update() //unity calls this function once per frame
     {   
@@ -19,7 +21,7 @@ public class CameraMovement : MonoBehaviour
         transform.position = objectToFollow.transform.position - distance; //setting position of camera
 
         if (realTimeLook)
-            transform.LookAt(new Vector3(objectToLook.transform.position.x, objectToLook.transform.position.y, 0));
+            transform.LookAt(new Vector3(objectToLook.transform.position.x+10, objectToLook.transform.position.y, 0));
 
     }
     

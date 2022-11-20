@@ -594,6 +594,7 @@ MonoBehaviour:
   gameStarted: 0
   realTimeLook: 0
   distance: {x: -1.5, y: -1.8, z: -0.29195958}
+  distance2: {x: -3, y: -5, z: 0}
 --- !u!1001 &985381253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -615,7 +616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8624977933277693467, guid: b14fe30f4e83f9140bcde14b85bc28a6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6241843
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8624977933277693467, guid: b14fe30f4e83f9140bcde14b85bc28a6, type: 3}
       propertyPath: m_LocalScale.z
@@ -1137,7 +1138,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3957606334084384837, guid: 4fa554d4eb43d364bb92cd35c0ecdde1, type: 3}
       propertyPath: carYear
-      value: 1
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957606334084384837, guid: 4fa554d4eb43d364bb92cd35c0ecdde1, type: 3}
+      propertyPath: carNumbers
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3957606334084384837, guid: 4fa554d4eb43d364bb92cd35c0ecdde1, type: 3}
       propertyPath: splashParticle
@@ -1222,6 +1227,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8624977933277693464, guid: b14fe30f4e83f9140bcde14b85bc28a6, type: 3}
       propertyPath: buffCarNumbers
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624977933277693464, guid: b14fe30f4e83f9140bcde14b85bc28a6, type: 3}
+      propertyPath: carNumbersMultipler
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8624977933277693467, guid: b14fe30f4e83f9140bcde14b85bc28a6, type: 3}
@@ -1234,7 +1243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8624977933277693467, guid: b14fe30f4e83f9140bcde14b85bc28a6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6241843
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8624977933277693467, guid: b14fe30f4e83f9140bcde14b85bc28a6, type: 3}
       propertyPath: m_LocalScale.z
