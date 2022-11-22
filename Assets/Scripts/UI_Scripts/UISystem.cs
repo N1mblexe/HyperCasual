@@ -13,6 +13,7 @@ public class UISystem : MonoBehaviour
     public GameObject PauseSettingsMenu;
     public GameObject StartMenu;
     public GameObject DailyMission;
+    public GameObject Cark,CarkObj;
     [Header("Müzikler")]
     public AudioSource Theme;
     [Header("Arkaplan")]
@@ -38,11 +39,19 @@ public class UISystem : MonoBehaviour
        }
    }
     #region UI Buton Fonksiyonlarý
-    public void CloseDailyMission()
+    public void CloseCark()
+    {
+        StartMenu.SetActive(true);
+        Cark.SetActive(false);
+        Panel.SetActive(false);
+        CarkObj.SetActive(false);
+    }
+
+        public void CloseDailyMission()
     {
         StartMenu.SetActive(true);
         DailyMission.SetActive(false);
-        Panel.SetActive(true);
+        Panel.SetActive(false);
         
     }
    public void Resume()

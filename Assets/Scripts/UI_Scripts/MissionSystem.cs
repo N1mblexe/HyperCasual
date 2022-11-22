@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class MissionSystem : MonoBehaviour
 {
-    [SerializeField] List<GameObject> Missions;
-    
-    public static int cash = 0, diamond;
+    [SerializeField] private List<GameObject> Missions;
+   
+    public static int cash = 0, diamond=0;
     private void Start()
     {
         // Missions.Add();
     }
+   
 
 }
