@@ -41,7 +41,7 @@ public class follower : MonoBehaviour
             transform.position.z);
         transform.position = Vector3.Lerp(
                 transform.position,
-                new Vector3(linkedObj.transform.position.x + transform.localScale.y * 1.1f, linkedObj.transform.position.y, linkedObj.transform.position.z),
+                new Vector3(linkedObj.transform.position.x + transform.localScale.y * 1.1f, transform.position.y, linkedObj.transform.position.z),
                 (float)yumos);
     }
 
