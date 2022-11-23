@@ -14,6 +14,7 @@ public class UISystem : MonoBehaviour
     public GameObject StartMenu;
     public GameObject DailyMission;
     public GameObject Cark,CarkObj;
+    public GameObject Shop;
     [Header("Müzikler")]
     public AudioSource Theme;
     [Header("Arkaplan")]
@@ -54,7 +55,36 @@ public class UISystem : MonoBehaviour
         Panel.SetActive(false);
         
     }
-   public void Resume()
+    public void CloseShop()
+    {
+        StartMenu.SetActive(true);
+        Shop.SetActive(false);
+        Panel.SetActive(false);
+
+    }
+    public void OpenShop()
+    {
+        StartMenu.SetActive(false);
+        Shop.SetActive(true);
+        Panel.SetActive(false);
+
+    }
+    public void OpenCark()
+    {
+        StartMenu.SetActive(false);
+        Cark.SetActive(true);
+        Panel.SetActive(true);
+        CarkObj.SetActive(true);
+    }
+
+    public void OpenDailyMission()
+    {
+        StartMenu.SetActive(false);
+        DailyMission.SetActive(true);
+        Panel.SetActive(false);
+
+    }
+    public void Resume()
    {
         StartMenu.SetActive(true);
         PauseMenu.SetActive(false);
