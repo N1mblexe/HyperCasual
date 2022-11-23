@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UI_Shop : MonoBehaviour
 {
     [SerializeField] private string[] Items;
+    [SerializeField] private Sprite[] Sprites;
     [SerializeField] private int[] prices;
     [SerializeField] private TextMeshProUGUI Item1, Item2, Item3,Item1P,Item2P,Item3P;
+    [SerializeField] private Image Item1S, Item2S, Item3S;
     public void SatýnAl(string ItemName)
     {
         for (int i = 0; i < Items.Length; i++)
@@ -32,5 +35,8 @@ public class UI_Shop : MonoBehaviour
       Item1P.text = prices[0].ToString();
       Item2P.text = prices[1].ToString();
       Item3P.text = prices[2].ToString();
+      Item1S.sprite = Sprites[0];
+      Item2S.sprite = Sprites[1];
+      Item3S.sprite = Sprites[2];
     }
 }
