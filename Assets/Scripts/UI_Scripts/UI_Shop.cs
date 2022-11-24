@@ -6,11 +6,13 @@ using TMPro;
 
 public class UI_Shop : MonoBehaviour
 {
+    #region Variables
     [SerializeField] private string[] Items;
     [SerializeField] private Sprite[] Sprites;
     [SerializeField] private int[] prices;
     [SerializeField] private TextMeshProUGUI Item1, Item2, Item3,Item1P,Item2P,Item3P;
     [SerializeField] private Image Item1S, Item2S, Item3S;
+    #endregion
     public void SatýnAl(string ItemName)
     {
         for (int i = 0; i < Items.Length; i++)
