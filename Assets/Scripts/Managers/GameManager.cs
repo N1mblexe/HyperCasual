@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
+        PlayerPrefs.SetInt("maxCar", 0);
         level = SceneManager.GetActiveScene().buildIndex;
         PlayerPrefs.SetInt("level", level);
     }
@@ -55,5 +56,7 @@ public class GameManager : MonoBehaviour
                     SceneManager.LoadScene(level);
             }
         }
+        if (PlayerPrefs.GetInt("maxCar") < carNumbers) PlayerPrefs.SetInt("maxCar", carNumbers);
+        if (PlayerPrefs.GetInt("maxYear") < carYear) PlayerPrefs.SetInt("maxYear", carYear);
     }
 }
