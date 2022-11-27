@@ -24,13 +24,18 @@ public class DamageSharky : MonoBehaviour
                 other.GetComponent<Renderer>().material.color = new Color(0, 0, 0, 0);
                 other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             }
-            else player.GetComponent<CarManager>().DeleteFrontCar();
+            other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            other.gameObject.SetActive(false);
             player.GetComponent<GameManager>().carNumbers--;
+            if (health > 0) Time.timeScale = (100 - health) / 50 + 1;
+            else if (health == 0 && multipler == 1) Time.timeScale = 3;
+            else Time.timeScale = multipler * 3;
         }
     }
 
     private void Update()
     {
+        
         if(health < 0) health = 0;
         Debug.Log(health);
         GetComponent<Renderer>().material.color = new Color((100-health)/100, health / 100, 0, 1);

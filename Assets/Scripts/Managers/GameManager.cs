@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
+        Time.timeScale = 1;
         PlayerPrefs.SetInt("maxCar", 0);
         level = SceneManager.GetActiveScene().buildIndex;
         PlayerPrefs.SetInt("level", level);
