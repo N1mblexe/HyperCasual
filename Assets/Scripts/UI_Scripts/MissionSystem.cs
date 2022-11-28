@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MissionSystem : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> Missions;
-   
+
+    public List<GameObject> Missions;
+    public Text MissionExample, CashMiktar; 
     public static int cash = 0, diamond=0;
     private void Start()
     {
@@ -16,7 +18,7 @@ public class MissionSystem : MonoBehaviour
     }
     private void Update()
     {
-        
+
     }
     bool MaxCarMission(int CarNumber)
     {

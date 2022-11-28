@@ -7105,10 +7105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Missions:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  MissionExample: {fileID: 0}
+  CashMiktar: {fileID: 0}
 --- !u!114 &1189038917
 MonoBehaviour:
   m_ObjectHideFlags: 0
