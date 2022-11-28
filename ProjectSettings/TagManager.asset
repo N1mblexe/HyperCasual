@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Buffer
   - Car
+  - EndLevel
+  - player
   layers:
   - Default
   - TransparentFX
